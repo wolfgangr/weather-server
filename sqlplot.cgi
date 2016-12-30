@@ -39,7 +39,9 @@
 
 
 $gnuplot = "/usr/bin/gnuplot";
-$tempfile_prefix="/usr/local/httpd/htdocs/html/tmp/sqlplot-"; 
+# $tempfile_prefix="/usr/local/httpd/htdocs/html/tmp/sqlplot-"; 
+$tempfile_prefix="/var/www/tmp/sqlplot/plot-";
+
 
 # (now the data for the context
 # given as an hash of arrays, the context name as key,
