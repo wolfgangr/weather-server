@@ -1,0 +1,33 @@
+
+[ wr 2014-03-03 ]
+
+
+mysql scripts to aggreagete weather data 
+
+to be executed here:
+	wrosner@cleo2:~/daten/computerei/wetter/wetter_sdr/scripts>
+
+credentials here 
+	my.cnf
+
+interactive call:
+	mysql --defaults-file=my.cnf
+
+call batch query e.g.
+	mysql --defaults-file=my.cnf  < wind-hist_bins.sql
+	mysql --defaults-file=my.cnf  < do-hourly.sql
+
+database creation (will also do a delete and allow reconstruction from raw data)
+	create-hourly.sql
+	create-wind-bins.sql
+
+batch queries
+	wind-hist_bins.sql
+	do-hourly.sql
+
+can be called repeatedly, 
+always the last interval alerady in aggregated database is calculated as well, 
+so addional data is correctly aggregated
+
+
+
