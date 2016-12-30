@@ -1,0 +1,13 @@
+# place to store database credentials as used by sqlplot script
+# any set of credentials is coined "context" 
+# and as such referred to in the calling url of sqlplot
+#
+# user PERL syntax
+# given as an hash of arrays, the context name as key,
+#    the array containing DBhost, database, user, passwd
+#
+$contextlist = {
+  'testlamp'     => ['localhost',             'test_lamp',       'userx',             'pswdXYZ'     ],
+  'thiswontwork' => ['1.2.3.4',                 'nirwana',     'sbdelse',             'verySECret'  ],
+};
+

@@ -45,11 +45,13 @@ $tempfile_prefix="/usr/local/httpd/htdocs/html/tmp/sqlplot-";
 # given as an hash of arrays, the context name as key,
 #    the array containing DBhost, database, user, passwd
 #
-$contextlist = {
-  'testlamp'     => ['localhost',             'test_lamp',       'userx',             'pswdXYZ'     ],
-  'thiswontwork' => ['1.2.3.4',                 'nirwana',     'sbdelse',             'verySECret'  ],
-};
+# $contextlist = {
+#   'testlamp'     => ['localhost',             'test_lamp',       'userx',             'pswdXYZ'     ],
+#   'thiswontwork' => ['1.2.3.4',                 'nirwana',     'sbdelse',             'verySECret'  ],
+# };
 
+# context now outside main script
+require ("context.pli");
 
 
 ###################################################### End of parameter area #######################
