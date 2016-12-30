@@ -126,7 +126,10 @@ ENDOFCOMMAND
   foreach $i ('b','e','a',(1..9)) {
     $tmp = shift(@defcol);
     if ($cgiquery->param("color$i")) { $tmp =$cgiquery->param("color$i");}
-    if ($tmp) { $command .= " x$tmp"; }
+    # fixme#####
+    #  see https://sourceforge.net/p/gnuplot/bugs/1155/
+    # they changed the color format :-(
+    ##### if ($tmp) { $command .= " x$tmp"; }  
   }
   $command .= "\n";
 
@@ -235,7 +238,9 @@ EOFCMD
 
   # error ("NO!, seems we have made a datafile!?");
 
-  $command .= "set data style lines\n";
+  #### fixme ???? http://stackoverflow.com/questions/28165254/gnuplot-error-on-command-set-data-s-l
+  # $command .= "set data style lines\n";
+  $command .= "set style data lines\n";
   $command .= "set xlabel \"$$labels[0]\"\n";
 
  
