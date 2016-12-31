@@ -34,7 +34,8 @@ REPLACE INTO `daily`
 	hum_out_min, hum_out_max, hum_out_avg, 
 	rain_count_max, rain_count_diff, 
 	wind_ave_avg, wind_gust_max, 
-	wind_vec_sin, wind_vec_cos) 
+	wind_vec_sin, wind_vec_cos, 
+	wind_sumsq_sin, wind_sumsq_cos, wind_sum_sinxcos)
 --	wind_vec_dir, wind_vec_mag)
 
 
@@ -81,7 +82,12 @@ SUM(rain_count_diff) 	AS rain_count_diff,
 AVG(wind_ave_avg)	AS wind_ave_avg,
 MAX(wind_gust_max) 	AS wind_gust_max, 
 AVG(wind_vec_sin)	AS wind_vec_sin,
-AVG(wind_vec_cos) 	AS wind_vec_cos
+AVG(wind_vec_cos) 	AS wind_vec_cos,
+
+### wr 2016-12-31 keep statistical data
+SUM(wind_sumsq_sin)    	AS wind_sumsq_sin,
+SUM(wind_sumsq_cos)    	AS wind_sumsq_cos,
+SUM(wind_sum_sinxcos) 	AS wind_sum_sinxcos
 	
 # NULL AS wind_vec_dir,
 # NULL AS wind_vec_mag
